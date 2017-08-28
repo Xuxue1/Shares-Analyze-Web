@@ -1,20 +1,19 @@
 <template>
   <div>
-    <div>
-      <Date-picker v-on:on-change="dateChange" type="date" placeholder="选择日期" style="width: 200px"></Date-picker>
+    <div class="searchWrapper marginBtm20">
+      <Date-picker v-on:on-change="dateChange" type="date" placeholder="选择日期" style="width: 220px"></Date-picker>
       <Button @click="search">查询</Button>
+      <div class="btnWrapper">
+        <Button type="primary" size="large" @click="exportData(1)"><Icon type="ios-download-outline"></Icon> 导出原始数据</Button>
+        <Button type="primary" size="large" @click="exportData(2)"><Icon type="ios-download-outline"></Icon> 导出排序和过滤后的数据</Button>
+        <Button type="primary" size="large" @click="exportData(3)"><Icon type="ios-download-outline"></Icon> 导出自定义数据</Button></div>
     </div>
-    <div>
+    <div class="tableWrapper marginBtm20">
       <Table :columns="columns" :data="data" size="small" ref="table"></Table>
-    </div>
-    <div>
-      <br>
-      <Button type="primary" size="large" @click="exportData(1)"><Icon type="ios-download-outline"></Icon> 导出原始数据</Button>
-      <Button type="primary" size="large" @click="exportData(2)"><Icon type="ios-download-outline"></Icon> 导出排序和过滤后的数据</Button>
-      <Button type="primary" size="large" @click="exportData(3)"><Icon type="ios-download-outline"></Icon> 导出自定义数据</Button>
     </div>
   </div>
 </template>
+
 <script>
   import VueResource from 'vue-resource'
   import Vue from 'vue'
