@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+#app {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.marginBtm20 {
+    margin-bottom: 20px;
+}
+
+.searchWrapper {
+    height: auto;
+    text-align: left;
+    overflow: hidden;
+}
+
+.btnWrapper {
+    text-align: right;
+}
